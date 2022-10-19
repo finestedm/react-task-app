@@ -19,8 +19,14 @@ export default class App extends React.Component {
 
     this.addTask = this.addTask.bind(this);
     this.handleChange = this.handleChange.bind(this);
-
+    this.deleteButtonClick = this.deleteButtonClick.bind(this);
   };
+
+  deleteButtonClick(taskId) {
+    this.setState({
+      tasks: this.state.tasks.filter(task => task.id !== taskId)
+    })
+  }
 
   addTask() {
     if (this.state.task.text !== '') {
@@ -62,7 +68,7 @@ export default class App extends React.Component {
           />
           <Button variant="primary" onClick={this.addTask}>Click me</Button>{' '}
         </InputGroup>
-        <Overview tasks={tasks} />
+        <Overview tasks={tasks} deleteButtonClick={this.deleteButtonClick} />
       </Container >
     )
   }
