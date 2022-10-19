@@ -2,6 +2,8 @@ import React from 'react';
 import Overview from './components/Overview';
 import { Button } from 'react-bootstrap';
 import { Form, InputGroup } from 'react-bootstrap';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
 import uniqid from "uniqid";
 
